@@ -20,11 +20,11 @@ var revenue = 0
 var acceptedGroups = 0
 var rejections = 0
 
-var i = 0
+var groupIndex = 0
 
-while (i < group.size) {
+while (groupIndex < group.size) {
 
-    val groupSize = group[i]
+    val groupSize = group[groupIndex]
 
     if (groupSize < 1 || groupSize > 6) {
         rejections++
@@ -43,31 +43,31 @@ while (i < group.size) {
 
 
                 var free = true
-                var j = 0
+                var personIndex = 0
                 
 
-                while (j < groupSize) {
+                while (personIndex < groupSize) {
 
-                    if(hall[row][seat + j] == 1)
+                    if(hall[row][seat + personIndex] == 1)
                         free = false
-                
-                    
 
-                    j++
+
+
+                    personIndex++
                 }
                   if(free){
-                    j = 0
-                      while (j < groupSize) {
-                        hall[row][seat + j] = 1
-                        j++
+                      personIndex = 0
+                      while (personIndex < groupSize) {
+                        hall[row][seat + personIndex] = 1
+                          personIndex++
 
                           
 
                        
                       }
-                      var r = 0
-while (r < hall.size) {
-    println(hall[r].contentToString())
+                      var RowIndex = 0
+while (RowIndex < hall.size) {
+    println(hall[RowIndex].contentToString())
     r++
 }
                       placed = true
